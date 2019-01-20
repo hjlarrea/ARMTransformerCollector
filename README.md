@@ -15,5 +15,5 @@ az group deployment create -g testDeployment --template-uri https://raw.githubus
 ### PowerShell
 
 ```powershell
-
+ New-AzureRmResourceGroupDeployment -ResourceGroupName testDeployment -TemplateParameterFile .\callingTemplate.parameters.json -TemplateUri https://raw.githubusercontent.com/hjlarrea/ARMTransformerCollector/master/callingTemplate.json
 ```
