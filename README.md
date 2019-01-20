@@ -9,11 +9,17 @@ This is a quick view on how the different JSON files will interact. For further 
 ### az cli
 
 ```bash
+git clone https://github.com/hjlarrea/ARMTransformerCollector.git
+cd ARMTransformerCollector
+az group create --location eastus --name testDeployment
 az group deployment create -g testDeployment --template-uri https://raw.githubusercontent.com/hjlarrea/ARMTransformerCollector/master/callingTemplate.json --parameters callingTemplate.parameters.json
 ```
 
 ### PowerShell
 
 ```powershell
- New-AzureRmResourceGroupDeployment -ResourceGroupName testDeployment -TemplateParameterFile .\callingTemplate.parameters.json -TemplateUri https://raw.githubusercontent.com/hjlarrea/ARMTransformerCollector/master/callingTemplate.json
+git clone https://github.com/hjlarrea/ARMTransformerCollector.git
+cd ARMTransformerCollector
+New-AzureRmResourceGroup -Name testDeployment -Location eastus
+New-AzureRmResourceGroupDeployment -ResourceGroupName testDeployment -TemplateParameterFile .\callingTemplate.parameters.json -TemplateUri https://raw.githubusercontent.com/hjlarrea/ARMTransformerCollector/master/callingTemplate.json
 ```
